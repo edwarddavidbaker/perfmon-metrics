@@ -642,23 +642,23 @@ class Model:
         }
 
         ratio_column = {
-            "IVT": ("IVT", "IVB", "JKT/SNB-EP", "SNB"),
-            "IVB": ("IVB", "SNB", ),
-            "HSW": ("HSW", "IVB", "SNB", ),
-            "HSX": ("HSX", "HSW", "IVT", "IVB", "JKT/SNB-EP", "SNB"),
-            "BDW": ("BDW", "HSW", "IVB", "SNB", ),
-            "BDX": ("BDX", "BDW", "HSX", "HSW", "IVT", "IVB", "JKT/SNB-EP", "SNB"),
-            "SNB": ("SNB", ),
-            "JKT/SNB-EP": ("JKT/SNB-EP", "SNB"),
-            "SKL/KBL": ("SKL/KBL", "BDW", "HSW", "IVB", "SNB"),
+            'IVT': ('IVT', 'IVB', 'JKT/SNB-EP', 'SNB'),
+            'IVB': ('IVB', 'SNB', ),
+            'HSW': ('HSW', 'IVB', 'SNB', ),
+            'HSX': ('HSX', 'HSW', 'IVT', 'IVB', 'JKT/SNB-EP', 'SNB'),
+            'BDW': ('BDW', 'HSW', 'IVB', 'SNB', ),
+            'BDX': ('BDX', 'BDW', 'HSX', 'HSW', 'IVT', 'IVB', 'JKT/SNB-EP', 'SNB'),
+            'SNB': ('SNB', ),
+            'JKT/SNB-EP': ('JKT/SNB-EP', 'SNB'),
+            'SKL/KBL': ('SKL/KBL', 'BDW', 'HSW', 'IVB', 'SNB'),
             'SKX': ('SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX', 'HSW', 'IVT', 'IVB',
                     'JKT/SNB-EP', 'SNB'),
-            "KBLR/CFL/CML": ("KBLR/CFL/CML", "SKL/KBL", "BDW", "HSW", "IVB", "SNB"),
+            'KBLR/CFL/CML': ('KBLR/CFL/CML', 'SKL/KBL', 'BDW', 'HSW', 'IVB', 'SNB'),
             'CLX': ('CLX', 'KBLR/CFL/CML', 'SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX', 'HSW',
                     'IVT', 'IVB', 'JKT/SNB-EP', 'SNB'),
             'CPX': ('CPX', 'CLX', 'KBLR/CFL/CML', 'SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX',
                     'HSW', 'IVT', 'IVB', 'JKT/SNB-EP', 'SNB'),
-            "ICL": ("ICL", "CNL", "KBLR/CFL/CML", "SKL/KBL", "BDW", "HSW", "IVB", "SNB"),
+            'ICL': ('ICL', 'CNL', 'KBLR/CFL/CML', 'SKL/KBL', 'BDW', 'HSW', 'IVB', 'SNB'),
             'ICX': ('ICX', 'ICL', 'CNL', 'CPX', 'CLX', 'KBLR/CFL/CML', 'SKX', 'SKL/KBL',
                     'BDX', 'BDW', 'HSX', 'HSW', 'IVT', 'IVB', 'JKT/SNB-EP', 'SNB'),
             'RKL': ('RKL', 'ICL', 'CNL', 'KBLR/CFL/CML', 'SKL/KBL', 'BDW', 'HSW',
@@ -676,7 +676,7 @@ class Model:
             'SPR-HBM': ('SPR-HBM', 'SPR', 'ADL/RPL', 'TGL', 'RKL', 'ICX', 'ICL', 'CNL',
                         'CPX', 'CLX', 'KBLR/CFL/CML', 'SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX',
                         'HSW','IVT','IVB','JKT/SNB-EP','SNB'),
-            "GRT": ("GRT"),
+            'GRT': ('GRT'),
         }
         tma_cpu = None
         if self.shortname == 'BDW-DE':
