@@ -665,6 +665,9 @@ class Model:
                     'HSW', 'IVB', 'SNB'),
             'ADL/RPL': ('ADL/RPL', 'TGL', 'RKL', 'ICL', 'CNL', 'KBLR/CFL/CML',
                         'SKL/KBL', 'BDW', 'HSW', 'IVB', 'SNB'),
+            # todo(ebaker): Uncomment when MTL is available in TMA spreadsheet.
+            # 'MTL': ('MTL', 'ADL/RPL', 'TGL', 'RKL', 'ICL', 'CNL', 'KBLR/CFL/CML',
+            #         'SKL/KBL', 'BDW', 'HSW', 'IVB', 'SNB'),
             'SPR': ('SPR', 'ADL/RPL', 'TGL', 'RKL', 'ICX', 'ICL', 'CNL', 'CPX', 'CLX',
                     'KBLR/CFL/CML', 'SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX', 'HSW', 'IVT',
                     'IVB', 'JKT/SNB-EP', 'SNB'),
