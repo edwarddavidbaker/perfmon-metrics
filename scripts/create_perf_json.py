@@ -653,7 +653,7 @@ class Model:
             "SKL/KBL": ("SKL/KBL", "BDW", "HSW", "IVB", "SNB"),
             'SKX': ('SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX', 'HSW', 'IVT', 'IVB',
                     'JKT/SNB-EP', 'SNB'),
-            "KBLR/CFL": ("KBLR/CFL", "SKL/KBL", "BDW", "HSW", "IVB", "SNB"),
+            "KBLR/CFL/CML": ("KBLR/CFL/CML", "SKL/KBL", "BDW", "HSW", "IVB", "SNB"),
             'CLX': ('CLX', 'KBLR/CFL/CML', 'SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX', 'HSW',
                     'IVT', 'IVB', 'JKT/SNB-EP', 'SNB'),
             'CPX': ('CPX', 'CLX', 'KBLR/CFL/CML', 'SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX',
