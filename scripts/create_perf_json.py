@@ -673,6 +673,9 @@ class Model:
             'SPR': ('SPR', 'ADL/RPL', 'TGL', 'RKL', 'ICX', 'ICL', 'CNL', 'CPX', 'CLX',
                     'KBLR/CFL/CML', 'SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX', 'HSW', 'IVT',
                     'IVB', 'JKT/SNB-EP', 'SNB'),
+            'SPR-HBM': ('SPR-HBM', 'SPR', 'ADL/RPL', 'TGL', 'RKL', 'ICX', 'ICL', 'CNL',
+                        'CPX', 'CLX', 'KBLR/CFL/CML', 'SKX', 'SKL/KBL', 'BDX', 'BDW', 'HSX',
+                        'HSW','IVT','IVB','JKT/SNB-EP','SNB'),
             "GRT": ("GRT"),
         }
         tma_cpu = None
