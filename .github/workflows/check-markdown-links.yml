@@ -1,6 +1,7 @@
 name: Check Markdown links
 
 on:
+  push:
   schedule:
     # Tuesdays at 9AM PST. GitHub Actions run in UTC.
     - cron: '0 16 * * 2'
@@ -13,10 +14,15 @@ jobs:
     runs-on: ubuntu-latest
     # Only run link checks in the main repo and not forks. The intent
     # is a low volume reminder to update stale links.
-    if: github.repository == 'intel/perfmon'
+    # if: github.repository == 'intel/perfmon'
     steps:
     - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-    - uses: gaurav-nelson/github-action-markdown-link-check@d53a906aa6b22b8979d33bc86170567e619495ec # 1.0.15
+    - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.02
       with:
-        use-verbose-mode: 'yes'
-        config-file: '.github/workflows/mlc_config.json'
+        node-version: 'latest'
+
+    - name: Install linkspector
+      run: npm install -g @umbrelladocs/linkspector
+
+    - name: Check links
+      run: linkspector check
