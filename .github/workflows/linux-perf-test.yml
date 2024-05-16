@@ -1,0 +1,47 @@
+# This workflow will clone the upstream perf-tools-next, copy updated event and metrics,
+# then run perf test.
+
+name: Verify perf test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  LINUX_DIR: ${{ github.workspace }}/linux
+  PERF_DIR: ${{ github.workspace }}/linux/tools/perf
+
+jobs:
+  verify-perf-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout perfmon
+      uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
+  
+    - name: Checkout perf-tools-next
+      run: |
+        git clone --progress --single-branch --depth 1 --branch perf-tools-next \
+          https://git.kernel.org/pub/scm/linux/kernel/git/perf/perf-tools-next.git \
+          "${LINUX_DIR}"
+
+    - name: Install build tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential binutils-dev libbabeltrace-dev libcap-dev \
+          libcapstone-dev libelf-dev libdw-dev libnuma-dev libperl-dev libpfm4-dev libslang2-dev \
+          libtraceevent-dev libunwind-dev llvm python3-setuptools systemtap-sdt-dev
+
+    # TODO(ebaker): Add steps to execute create_perf_json.py and copy the output into linux.
+
+    - name: Build perf
+      working-directory: ${{ env.PERF_DIR }}
+      run: make
+
+    - name: Run perf test
+      working-directory: ${{ env.PERF_DIR }}
+      run: perf test -v
