@@ -1,6 +1,7 @@
 name: Check Markdown links
 
 on:
+  push:
   schedule:
     # Tuesdays at 9AM PST. GitHub Actions run in UTC.
     - cron: '0 16 * * 2'
@@ -13,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     # Only run link checks in the main repo and not forks. The intent
     # is a low volume reminder to update stale links.
-    if: github.repository == 'intel/perfmon'
+    # if: github.repository == 'intel/perfmon'
     steps:
     - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
     - uses: gaurav-nelson/github-action-markdown-link-check@d53a906aa6b22b8979d33bc86170567e619495ec # 1.0.15
